@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CM Finish Carpentry | Southern Orange County</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="CM Finish Carpentry provides custom finish carpentry, trim, doors, and built-ins in Southern Orange County. One-man shop focused on tight details, clean work, and honest communication."
+  />
+  <style>
+    :root {
+      --bg: #0f1012;          /* anthracite style */
+      --bg-alt: #17191d;
+      --bg-light: #f5f5f5;
+      --text: #f5f5f5;
+      --text-muted: #bbbbbb;
+      --accent: #f5c14b;      /* gold-ish */
+      --accent-dark: #d59f1e;
+      --card: #1c1f24;
+      --border: #2a2d33;
+      --max-width: 1100px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1d2128 0, #050608 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      border-bottom: 1px solid #22252b;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 6, 8, 0.9),
+        rgba(5, 6, 8, 0.8)
+      );
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #343741, #111318);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    nav a {
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      transition: all 0.18s ease;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(245, 193, 75, 0.07);
+    }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(120deg, var(--accent), var(--accent-dark));
+      color: #141318;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.55);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.75);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      margin-top: 1.75rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .badge {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #30343c;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(120deg, var(--accent), var(--accent-dark));
+      color: #141318;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.13s ease, box-shadow 0.13s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(0,0,0,0.9);
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid #333740;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-ghost span.icon {
+      display: inline-flex;
+      transform: translateY(1px);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(245, 193, 75, 0.06);
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top left, #3a3f4c 0, #15171d 40%, #050609 100%);
+      border-radius: 24px;
+      padding: 1.25rem 1.4rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(245,193,75,0.2), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-right-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-right-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      gap: 1rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-location-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 0 2px rgba(245,193,75,0.2);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card {
+      background: rgba(8,9,12,0.85);
+      border-radius: 16px;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.78rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-card-sub {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .hero-metric-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+    .metric {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero-footer-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.25rem;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+    }
+
+    .service-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.2rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.22rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #393d46;
+      color: var(--text-muted);
+    }
+
+    /* Portfolio */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .portfolio-item {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.65);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-image {
+      background: linear-gradient(135deg, #272b33, #151820);
+      height: 150px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-lines {
+      position: absolute;
+      inset: 18% 10%;
+      border-radius: 14px;
+      border: 1px solid rgba(245,193,75,0.4);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.6);
+    }
+
+    .portfolio-lines::before,
+    .portfolio-lines::after {
+      content: "";
+      position: absolute;
+      inset: 14%;
+      border: 1px dashed rgba(245,193,75,0.35);
+      transform: skewX(-10deg);
+    }
+
+    .portfolio-lines::after {
+      inset: 28%;
+      transform: skewX(10deg);
+      opacity: 0.8;
+    }
+
+    .portfolio-body {
+      padding: 0.85rem 0.9rem 0.9rem;
+    }
+
+    .portfolio-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .portfolio-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Why section */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.75rem;
+    }
+
+    .list-checks {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .list-checks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .list-checks span.icon {
+      font-size: 1rem;
+      margin-top: 1px;
+      color: var(--accent);
+    }
+
+    .highlight-box {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 0.9rem 0.95rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Service area */
+
+    .area-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.5rem;
+    }
+
+    .area-badge {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(5,6,8,0.9);
+    }
+
+    /* Testimonials */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.7);
+    }
+
+    .testimonial-name {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .testimonial-meta {
+      font-size: 0.76rem;
+      color: var(--accent);
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.75rem;
+    }
+
+    form {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.7);
+    }
+
+    .form-row {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
+      display: block;
+      color: var(--text-muted);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #323540;
+      padding: 0.55rem 0.6rem;
+      font-size: 0.85rem;
+      background: #0e1015;
+      color: var(--text);
+      outline: none;
+      transition: border 0.14s ease, box-shadow 0.14s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(245,193,75,0.35);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .contact-line {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-highlight {
+      font-size: 1.05rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .contact-socials {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .social-pill {
+      font-size: 0.8rem;
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .social-pill:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(245,193,75,0.08);
+    }
+
+    footer {
+      border-top: 1px solid #22252b;
+      margin-top: 3rem;
+      padding: 1.25rem 1.25rem 2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: baseline;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 860px) {
+      .hero,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        margin-top: 1.25rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding-inline: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <!-- Put logo.png in the same folder as this file -->
+        <div class="brand-mark">
+          <img src="logo.png" alt="CM Finish Carpentry logo" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">CM Finish Carpentry</div>
+          <div class="brand-sub">Southern Orange County</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Work</a></li>
+          <li><a href="#why">Why Me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+        Get a quote
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-kicker">Custom finish carpentry</div>
+        <h1>
+          Clean, precise <span>finish work</span><br />
+          for homes in South OC.
+        </h1>
+        <p>
+          I’m a one-man finish carpentry shop focused on tight lines, clean installs, and
+          respectful work inside your home. Doors, trim, built-ins, accent walls, and more
+          throughout Southern Orange County.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge"><span class="dot"></span> Licensed & insured</div>
+          <div class="badge">One point of contact – CM</div>
+          <div class="badge">Dust-conscious & tidy clean-up</div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+            Request a free estimate
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
+            <span class="icon">▶</span>
+            View recent projects
+          </button>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-inner">
+          <div class="hero-right-header">
+            <div>
+              <div class="hero-tagline">Trim • Doors • Built-ins</div>
+              <div style="font-size:0.9rem;margin-top:0.35rem;">
+                Small-batch carpentry, no rushed crew work.
+              </div>
+            </div>
+            <div class="hero-location">
+              <span class="hero-location-dot"></span>
+              <span>Southern Orange County, CA</span>
+            </div>
+          </div>
+
+          <div class="hero-grid">
+            <div class="hero-card">
+              <div class="hero-card-title">High-detail trim work</div>
+              <div class="hero-card-sub">
+                Baseboard, casing, crown & wainscoting with tight joints and clean caulking.
+              </div>
+              <div class="hero-metric-row">
+                <div>
+                  <div class="metric">Miter • Cope • Scribe</div>
+                  <div class="hero-card-sub">Dialed-in details inside every room.</div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-title">Custom doors & features</div>
+              <div class="hero-card-sub">
+                New interior doors, barn doors, accent walls & media walls tailored to your space.
+              </div>
+              <div class="hero-metric-row">
+                <div>
+                  <div class="metric">1:1 communication</div>
+                  <div class="hero-card-sub">Speak directly with the person doing the work.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="hero-footer-note">
+            You’ll get honest timelines, itemized pricing, and work done by the same person you talk to on day one.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="section-header">
+        <h2>Services</h2>
+        <p>
+          From simple baseboard upgrades to full-room trim packages, I focus on finish details that
+          make your home feel clean, sharp, and put together.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-title">Baseboards & casing</div>
+          <div class="service-desc">
+            Replace dated or damaged trim with modern profiles, tight joints, and smooth transitions.
+          </div>
+          <div class="service-tags">
+            <span class="tag">New construction & remodels</span>
+            <span class="tag">Cope & miter joints</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-title">Interior doors</div>
+          <div class="service-desc">
+            Install new interior doors, jambs, and hardware for a solid, clean close and consistent reveals.
+          </div>
+          <div class="service-tags">
+            <span class="tag">Single doors</span>
+            <span class="tag">Closets & barn doors</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-title">Accent & feature walls</div>
+          <div class="service-desc">
+            Shiplap, board & batten, and custom patterns that turn plain walls into a focal point.
+          </div>
+          <div class="service-tags">
+            <span class="tag">Living rooms</span>
+            <span class="tag">Bedrooms & offices</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-title">Built-ins & storage</div>
+          <div class="service-desc">
+            Media walls, shelving, and custom storage built to fit your space and your daily use.
+          </div>
+          <div class="service-tags">
+            <span class="tag">TV walls</span>
+            <span class="tag">Niches & alcoves</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-title">Finish punch & repairs</div>
+          <div class="service-desc">
+            Fix gaps, replace damaged trim, and handle end-of-project finish details that others left behind.
+          </div>
+          <div class="service-tags">
+            <span class="tag">Rental-ready</span>
+            <span class="tag">Pre-sale tune-ups</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-title">Small projects & custom ideas</div>
+          <div class="service-desc">
+            Have something specific in mind? I’m happy to look at custom carpentry requests on a project-by-project basis.
+          </div>
+          <div class="service-tags">
+            <span class="tag">One-day projects</span>
+            <span class="tag">Low-stress upgrades</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+      <div class="section-header">
+        <h2>Recent projects</h2>
+        <p>
+          Here’s a small sample of the type of finish work I take on. Ask for more photos and
+          details specific to what you’re planning.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-item">
+          <div class="portfolio-image">
+            <div class="portfolio-lines"></div>
+          </div>
+          <div class="portfolio-body">
+            <div class="portfolio-title">Whole-home baseboard upgrade</div>
+            <div class="portfolio-meta">
+              Mission Viejo • 5-1/4" modern base, new casing, caulk & paint-ready.
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <div class="portfolio-image">
+            <div class="portfolio-lines"></div>
+          </div>
+          <div class="portfolio-body">
+            <div class="portfolio-title">Living-room feature wall</div>
+            <div class="portfolio-meta">
+              Rancho Mission Viejo • Accent wall with clean reveals around outlets & media.
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <div class="portfolio-image">
+            <div class="portfolio-lines"></div>
+          </div>
+          <div class="portfolio-body">
+            <div class="portfolio-title">Interior door package</div>
+            <div class="portfolio-meta">
+              Laguna Niguel • New solid-core doors, jambs, and hardware with consistent reveals.
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why me -->
+    <section id="why">
+      <div class="section-header">
+        <h2>Why work with CM Finish Carpentry?</h2>
+        <p>
+          You’re not just hiring a crew — you’re working directly with the person who measures,
+          cuts, and installs every part of your project.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div>
+          <ul class="list-checks">
+            <li>
+              <span class="icon">✓</span>
+              <span>
+                <strong>Direct communication:</strong> No bouncing between estimator, office, and crew.
+                You talk to the installer from day one.
+              </span>
+            </li>
+            <li>
+              <span class="icon">✓</span>
+              <span>
+                <strong>Attention to detail:</strong> I only book what I can realistically handle, so your
+                project isn’t rushed to get to the next job.
+              </span>
+            </li>
+            <li>
+              <span class="icon">✓</span>
+              <span>
+                <strong>Respect for your home:</strong> Drop cloths, vacuum, and clean edges so you
+                don’t feel like you had a construction zone in your house.
+              </span>
+            </li>
+            <li>
+              <span class="icon">✓</span>
+              <span>
+                <strong>Transparent pricing:</strong> Clear, itemized estimates so you know what
+                you’re paying for and what’s included.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="highlight-box">
+          <p>
+            <strong>Typical projects:</strong> baseboard and trim upgrades, new interior doors,
+            accent walls, and built-ins in living rooms, bedrooms, and hallways.
+          </p>
+          <p style="margin-top:0.5rem;">
+            Jobs are scheduled so that I’m in your home for the minimum time necessary while
+            still doing the job right — no dragging projects out longer than they need to be.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Service area -->
+    <section id="area">
+      <div class="section-header">
+        <h2>Service area</h2>
+        <p>
+          I focus on Southern Orange County so I can give tighter time windows and realistic
+          schedules instead of over-booking across the county.
+        </p>
+      </div>
+      <div class="area-badges">
+        <span class="area-badge">San Clemente</span>
+        <span class="area-badge">Dana Point</span>
+        <span class="area-badge">Laguna Niguel</span>
+        <span class="area-badge">Mission Viejo</span>
+        <span class="area-badge">Rancho Mission Viejo</span>
+        <span class="area-badge">Ladera Ranch</span>
+        <span class="area-badge">Irvine (selected areas)</span>
+        <span class="area-badge">Nearby communities on request</span>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="section-header">
+        <h2>Client feedback</h2>
+        <p>
+          I rely on word-of-mouth and repeat clients. Here’s the kind of experience I try to give
+          every homeowner.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial">
+          “Showed up exactly when he said he would, walked us through options, and the trim work
+          completely changed the look of our downstairs. Super clean and professional.”
+          <div class="testimonial-name">— Homeowner, Ladera Ranch</div>
+          <div class="testimonial-meta">Baseboards & window casing</div>
+        </article>
+
+        <article class="testimonial">
+          “We had a tight schedule before moving in and he squeezed us in and still delivered very
+          clean work. You can tell he takes pride in straight lines and tight joints.”
+          <div class="testimonial-name">— Family, Mission Viejo</div>
+          <div class="testimonial-meta">Interior doors & accent wall</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Request an estimate</h2>
+        <p>
+          Send a quick message with what you’re looking to do, and I’ll follow up with a few
+          questions, a rough ballpark, and then a clear written quote.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form
+          action="#"
+          method="post"
+          onsubmit="alert('This demo form needs to be connected to an email service or backend to send messages.'); return false;"
+        >
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+1 (949) 397-1733"
+              />
+            </div>
+            <div>
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" placeholder="e.g. Laguna Niguel" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="project">Project type</label>
+              <input
+                id="project"
+                name="project"
+                type="text"
+                placeholder="Baseboards, doors, built-ins, accent wall, etc."
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="details">Project details</label>
+              <textarea
+                id="details"
+                name="details"
+                placeholder="A few details like number of rooms, rough square footage, and your ideal timeline help a lot."
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="btn-primary" type="submit">
+            Send message
+          </button>
+        </form>
+
+        <aside class="contact-info">
+          <div class="contact-line">
+            <div class="contact-label">Call or text</div>
+            <div class="contact-highlight">+1 (949) 397-1733</div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-label">Email</div>
+            <div class="contact-highlight">cmfinishcarpenter@gmail.com</div>
+          </div>
+
+          <div class="contact-line" style="margin-top:0.7rem;">
+            I work Monday–Saturday on a project-by-project basis. If I’m on the tools, I may not
+            answer immediately, but I do my best to return calls and texts the same day.
+          </div>
+
+          <div class="contact-socials">
+            <!-- Replace links with your real socials when you’re ready -->
+            <a class="social-pill" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="social-pill" href="#" target="_blank" rel="noopener">Google reviews</a>
+            <a class="social-pill" href="#" target="_blank" rel="noopener">Yelp</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> CM Finish Carpentry • Southern Orange County, CA</div>
+      <div>Licensed & insured • Trim, doors, built-ins, and finish details.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
